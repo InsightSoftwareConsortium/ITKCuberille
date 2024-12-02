@@ -316,6 +316,19 @@ add_test(
     100   # Maximum number of steps
 )
 
+add_test(
+  NAME Cuberille_tibial_cartilage_cropped
+  COMMAND CuberilleTestDriver CuberilleTest01
+    ${DATA_DIR}/tibial_cartilage_cropped.nrrd
+    ${ITK_TEST_OUTPUT_DIR}/tibial_cartilage_cropped.vtk
+    0.5    # Iso-surface value
+    20036 # Expected number of points
+    40048 # Expected number of cells
+    1     # Generate triangle faces
+    1     # Project vertices to iso-surface
+    0.05  # Surface distance threshold
+)
+
 #add_test(
 #  Cuberille_Engine_01
 #  CuberilleTest01
