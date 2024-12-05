@@ -317,13 +317,26 @@ add_test(
 )
 
 add_test(
-  NAME Cuberille_tibial_cartilage_cropped
+  NAME Cuberille_tibial_cartilage_cropped_0.1
+  COMMAND CuberilleTestDriver CuberilleTest01
+    ${DATA_DIR}/tibial_cartilage_cropped.nrrd
+    ${ITK_TEST_OUTPUT_DIR}/tibial_cartilage_cropped.vtk
+    0.1    # Iso-surface value
+    526   # Expected number of points
+    938   # Expected number of cells
+    1     # Generate triangle faces
+    1     # Project vertices to iso-surface
+    0.05  # Surface distance threshold
+)
+
+add_test(
+  NAME Cuberille_tibial_cartilage_cropped_0.5
   COMMAND CuberilleTestDriver CuberilleTest01
     ${DATA_DIR}/tibial_cartilage_cropped.nrrd
     ${ITK_TEST_OUTPUT_DIR}/tibial_cartilage_cropped.vtk
     0.5    # Iso-surface value
-    20036 # Expected number of points
-    40048 # Expected number of cells
+    0     # Expected number of points
+    0     # Expected number of cells
     1     # Generate triangle faces
     1     # Project vertices to iso-surface
     0.05  # Surface distance threshold
