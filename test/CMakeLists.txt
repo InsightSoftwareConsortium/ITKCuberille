@@ -351,6 +351,19 @@ add_test(
 #  25      # Maximum number of steps
 #)
 
+add_test(
+  NAME TC_prob_float_9021791_96M_right_cropped
+  COMMAND CuberilleTestDriver CuberilleTest01
+    ${DATA_DIR}/TC_prob_float_9021791_96M_right_cropped.nrrd
+    ${ITK_TEST_OUTPUT_DIR}/TC_prob_float_9021791_96M_right_cropped.vtk
+    0.5   # Iso-surface value
+    132   # Expected number of points
+    222   # Expected number of cells
+    1     # Generate triangle faces
+    1     # Project vertices to iso-surface
+    0.05  # Surface distance threshold
+)
+
 itk_add_test(NAME CuberilleTestDirectionMatrix
   COMMAND ${itk-module}TestDriver CuberilleTest02 )
 
