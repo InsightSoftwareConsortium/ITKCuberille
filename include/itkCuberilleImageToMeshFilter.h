@@ -129,7 +129,7 @@ public:
   itkNewMacro(Self);
 
   /** Run-time type information (and related methods). */
-  itkTypeMacro(CuberilleImageToMeshFilter, ImageToMeshFilter);
+  itkOverrideGetNameOfClassMacro(CuberilleImageToMeshFilter);
 
   /** Some convenient type alias. */
   using OutputMeshType = TOutputMesh;
