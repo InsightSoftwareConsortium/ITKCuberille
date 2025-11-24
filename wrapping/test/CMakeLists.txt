@@ -8,6 +8,14 @@ set(test_input_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../test/Input)
 
 list(FIND ITK_WRAP_IMAGE_DIMS 3 wrap_3_index)
 if(wrap_3_index GREATER -1)
+  itk_python_add_test(NAME Cuberille_tibial_cartilage_cropped_python
+    TEST_DRIVER_ARGS
+    COMMAND cuberille_test.py
+      DATA{${test_input_dir}/tibial_cartilage_cropped.nrrd}
+      ${ITK_TEST_OUTPUT_DIR}/tibial_cartilage_cropped.vtk
+        0.5  # iso-surface value
+    )
+
   itk_python_add_test(NAME Cuberille_blob0_python
     TEST_DRIVER_ARGS
     COMMAND cuberille_test.py
@@ -21,6 +29,14 @@ if(wrap_3_index GREATER -1)
       DATA{${test_input_dir}/blob0.mha}
       ${ITK_TEST_OUTPUT_DIR}/blob0_100.vtk
         100  # iso-surface value
+    )
+
+  itk_python_add_test(NAME Cuberille_prostate_00_python
+    TEST_DRIVER_ARGS
+    COMMAND cuberille_test.py
+      DATA{${test_input_dir}/prostate_00.nii.gz}
+      ${ITK_TEST_OUTPUT_DIR}/prostate_00.vtk
+        1  # iso-surface value
     )
 
   itk_python_add_test(NAME Cuberille_hydrogenAtom_35_python
