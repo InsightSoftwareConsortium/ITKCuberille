@@ -31,6 +31,14 @@ if(wrap_3_index GREATER -1)
         100  # iso-surface value
     )
 
+  itk_python_add_test(NAME Cuberille_prostate_00_python
+    TEST_DRIVER_ARGS
+    COMMAND cuberille_test.py
+      DATA{${test_input_dir}/prostate_00.nii.gz}
+      ${ITK_TEST_OUTPUT_DIR}/prostate_00.vtk
+        1  # iso-surface value
+    )
+
   itk_python_add_test(NAME Cuberille_hydrogenAtom_35_python
     TEST_DRIVER_ARGS
     COMMAND cuberille_test.py
