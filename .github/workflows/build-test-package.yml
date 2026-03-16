@@ -16,5 +16,10 @@ jobs:
 
   python-build-workflow:
     uses: InsightSoftwareConsortium/ITKRemoteModuleBuildTestPackageAction/.github/workflows/build-test-package-python.yml@main
+    with:
+      itk-python-package-org: 'BRAINSia'
+      itk-python-package-tag: python_based_build_scripts
+      itk-wheel-tag: 'v6.0b01'
+      python3-minor-versions: '["10"]'
     secrets:
       pypi_password: ${{ secrets.pypi_password }}
