@@ -15,6 +15,18 @@ jobs:
     uses: InsightSoftwareConsortium/ITKRemoteModuleBuildTestPackageAction/.github/workflows/build-test-cxx.yml@main
 
   python-build-workflow:
-    uses: InsightSoftwareConsortium/ITKRemoteModuleBuildTestPackageAction/.github/workflows/build-test-package-python.yml@main
+    uses: InsightSoftwareConsortium/ITKRemoteModuleBuildTestPackageAction/.github/workflows/build-test-package-python.yml@ghcr-mirror-dockcross-images
+    with:
+        # HACK DO NOT COMMIT
+        cmake-options: ""
+        itk-python-package-org: 'InsightSoftwareConsortium'
+        itk-python-package-tag: 'python_based_build_scripts'  # <- ITKRemoteModuleBuildTestPackageAction workflow parameter
+        itk-wheel-tag: 'v6.0b02'
+        itk-module-deps: ""
+        #python3-minor-versions: '["9","10","11"]'
+        python3-minor-versions: '["11"]'
+        manylinux-platforms: '["_2_28-x64"]'
+        macosx-deployment-target: ''
+        test-notebooks: false
     secrets:
-      pypi_password: ${{ secrets.pypi_password }}
+        pypi_password: ${{ secrets.pypi_password }}
