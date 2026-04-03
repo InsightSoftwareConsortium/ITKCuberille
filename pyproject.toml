@@ -37,7 +37,7 @@ classifiers = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "itk-io == 5.4.*",
+    "itk-io == 6.*",
     "numpy",
 ]
 dynamic = ["version"]
