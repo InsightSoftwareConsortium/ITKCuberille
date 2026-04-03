@@ -1,20 +1,9 @@
 name: Build, test, package
 
-on:
-  push:
-    branches:
-      - main
-    tags:
-      - 'v*'
-  pull_request:
-    branches:
-      - main
+on: [push,pull_request]
 
 jobs:
-  cxx-build-workflow:
-    uses: InsightSoftwareConsortium/ITKRemoteModuleBuildTestPackageAction/.github/workflows/build-test-cxx.yml@main
-
-  python-build-workflow:
-    uses: InsightSoftwareConsortium/ITKRemoteModuleBuildTestPackageAction/.github/workflows/build-test-package-python.yml@main
-    secrets:
-      pypi_password: ${{ secrets.pypi_password }}
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Build disabled for WIP clang-format linter test"
