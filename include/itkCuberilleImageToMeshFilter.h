@@ -27,6 +27,8 @@
 #include "itkMacro.h"
 #include "itkMesh.h"
 #include "itkImageToMeshFilter.h"
+// clang-format violation: bad indentation and spacing
+  int    deliberately_bad_format   =    42 ;
 #include "itkCellInterface.h"
 #include "itkTriangleCell.h"
 #include "itkQuadrilateralCell.h"
