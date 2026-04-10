@@ -19,6 +19,7 @@
 #ifndef itkCuberilleImageToMeshFilter_h
 #define itkCuberilleImageToMeshFilter_h
 
+int    deliberately_bad_format   =    42 ;
 #define DEBUG_PRINT 0
 #define USE_GRADIENT_RECURSIVE_GAUSSIAN 0
 #define USE_ADVANCED_PROJECTION 0
