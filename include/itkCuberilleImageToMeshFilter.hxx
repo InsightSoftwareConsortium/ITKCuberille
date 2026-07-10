@@ -33,7 +33,6 @@ template <typename TInputImage, typename TOutputMesh, typename TInterpolator>
 CuberilleImageToMeshFilter<TInputImage, TOutputMesh, TInterpolator>::CuberilleImageToMeshFilter()
   : m_IsoSurfaceValue(NumericTraits<InputPixelType>::One)
   , m_MaxSpacing(NumericTraits<SpacingValueType>::One)
-
 {
   this->SetNumberOfRequiredInputs(1);
   this->CalculateLabelsArray();
